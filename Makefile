@@ -40,6 +40,6 @@ clean:
 # installation part
 
 install: $(EXECUTIBLE)
-	$(INSTALL) -Dm 755 $(BUILDDIR)$(EXECUTABLE) $(DESTDIR)bin
+	$(INSTALL) -Dm 755 $(BUILDDIR)$(EXECUTABLE) $(DESTDIR)bin/$(EXECUTABLE)
 
 .phony: all clean install
