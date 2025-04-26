@@ -1,10 +1,12 @@
 SRCDIR=src/
 BINDIR=bin/
 BUILDDIR=build/
+DESTDIR?=/usr/local/
 
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror -pedantic -std=c89
 LDFLAGS=-lm
+INSTALL=install
 
 # Sources and headers
 SOURCES=$(wildcard $(SRCDIR)*.c)
@@ -35,4 +37,9 @@ $(BINDIR)%.o: $(SRCDIR)%.c
 clean:
 	rm -rf $(BUILDDIR) $(BINDIR)
 
-.phony: all clean
+# installation part
+
+install: $(EXECUTIBLE)
+	$(INSTALL) -m 755 $(BUILDDIR)$(EXECUTABLE) $(DESTDIR)bin
+
+.phony: all clean install
