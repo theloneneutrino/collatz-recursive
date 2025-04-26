@@ -16,7 +16,7 @@ HEADERS=$(wildcard $(SRCDIR)*.h) not needed at the moment
 OBJECTS=$(patsubst $(SRCDIR)%.c,$(BINDIR)%.o,$(SOURCES))
 
 # Executable name
-EXECUTABLE=recursive
+EXECUTABLE=collatz
 
 # Default target
 all: $(EXECUTABLE)
