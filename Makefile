@@ -3,7 +3,7 @@ BINDIR=bin/
 BUILDDIR=build/
 
 CC=gcc
-CFLAGS=-Wall -Wextra -Werror -pedantic -std=c99
+CFLAGS=-Wall -Wextra -Werror -pedantic -std=c89
 LDFLAGS=-lm
 
 # Sources and headers
