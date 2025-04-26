@@ -1,7 +1,8 @@
-#include <stdio.h>
+#include "recursive.h"
 
 void recursive (unsigned int number)
 {
+  fprintf(stdout,"Number was %i.\n", number);
   if (number == 1) { // if the number is one, exit.  It has hit an infinite loop
     return;
   }

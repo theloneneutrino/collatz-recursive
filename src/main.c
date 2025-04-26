@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "recursive.h"
 
 int charToInt (char* thisguy) {
   unsigned int result = 0;
@@ -10,6 +10,7 @@ int charToInt (char* thisguy) {
     }
     else {
       fprintf(stderr,"Error: your input was not a positive integer.");
+      return -1;
     }
 
 
@@ -19,17 +20,22 @@ int charToInt (char* thisguy) {
     it++;
   }
 
-  fprintf(stdout,"Your input was %i.\n",result);
   return result;
 }
 
 int main(int argc, char** argv)
 {
+  int inputNum = 0;
+
   switch (argc)
     {
     case 2:
-      charToInt(argv[1]);
-      break;
+      inputNum = charToInt(argv[1]);
+      if (inputNum == -1) {
+        return 1;
+      }
+      recursive(inputNum);
+      return 0;
     default:
       fprintf(stderr,"Error: Invalid usage of %s.\n", argv[0]);
       fprintf(stdout,"Usage: %s <number>\nWhere number is a positive integer.\n", argv[0]);

@@ -8,7 +8,7 @@ LDFLAGS=-lm
 
 # Sources and headers
 SOURCES=$(wildcard $(SRCDIR)*.c)
-# HEADERS=$(wildcard $(SRCDIR)*.h) not needed at the moment
+HEADERS=$(wildcard $(SRCDIR)*.h) not needed at the moment
 
 # Object files
 OBJECTS=$(patsubst $(SRCDIR)%.c,$(BINDIR)%.o,$(SOURCES))
@@ -25,7 +25,7 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(CFLAGS) -o $(BUILDDIR)$@ $^ $(LDFLAGS)
 
 # Compile source files to object files
-$(BINDIR)%.o: $(SRCDIR)%.c # $(HEADERS)
+$(BINDIR)%.o: $(SRCDIR)%.c
 	@mkdir -p $(BINDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
