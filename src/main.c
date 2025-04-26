@@ -32,7 +32,7 @@ int main(int argc, char** argv)
       break;
     default:
       fprintf(stderr,"Error: Invalid usage of %s.\n", argv[0]);
-      fprintf(stdout,"Usage: %s <number>\nWhere number is a positive integer.", argv[0]);
+      fprintf(stdout,"Usage: %s <number>\nWhere number is a positive integer.\n", argv[0]);
       return 1;
     }
 }
